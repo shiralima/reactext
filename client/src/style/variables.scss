@@ -1,0 +1,17 @@
+
+$white: #FFFFFF;
+$black: 000000;
+$generic-btn-color: #2fadcc;
+$generic-btn-hover-color: #347b8c;
+$font-family: 'Helvetica', 'Arial', sans-serif;
+
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:export{
+    genericBtnColor: $generic-btn-color;
+    genericBtnHoverColor: $generic-btn-hover-color;
+}
