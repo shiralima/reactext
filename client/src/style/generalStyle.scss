@@ -1,0 +1,11 @@
+@import "./variables.scss";
+
+.general-body{
+    font-family: $general-font-family !important;
+    height: 100vh;
+    width: 100vw;
+    font-size: 2vw;
+    font-weight: $general-font-weight;
+
+    // @include flex-centered
+}

@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 $white: #FFFFFF;
 $black: 000000;
 $generic-btn-color: #2fadcc;
 $generic-btn-hover-color: #347b8c;
-$font-family: 'Helvetica', 'Arial', sans-serif;
+$general-font-family: 'Source Sans Pro', sans-serif;
+$general-font-weight: 400;
+$header-font-weight: 600;
+$general-font-size: 1.5vw;
+$header-font-size: 2vw;
 
 @mixin flex-centered {
     display: flex;
@@ -11,7 +16,7 @@ $font-family: 'Helvetica', 'Arial', sans-serif;
     align-items: center;
 }
 
-:export{
+:export {
     genericBtnColor: $generic-btn-color;
     genericBtnHoverColor: $generic-btn-hover-color;
 }

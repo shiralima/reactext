@@ -1,9 +1,13 @@
-import { FC } from "react";
-import {useNavigate} from "react-router-dom"
+import { FC } from "react"
+import { useNavigate } from "react-router-dom"
 
-import { GenericButton } from "../genericComponents/index";
+import { GenericButton } from "../genericComponents/index"
 
-import { HOME_PAGE_TITLE, HOME_PAGE_TITLE_SUB, LOGIN, TO_REGISTER } from "../constes/index";
+import "../style/generalStyle.scss"
+import "../style/homPageStyle.scss"
+
+
+import { HOME_PAGE_TITLE, HOME_PAGE_TITLE_SUB, LOGIN, REGISTER, NO_ACCOUNT } from "../constes/index";
 
 export const HomePage: FC = () => {
 
@@ -12,18 +16,27 @@ export const HomePage: FC = () => {
   const goToLogin = () => navigate("/login")
 
   return (
-    <div className="home-page-body">
-      <div className="home-page-title">
-        {HOME_PAGE_TITLE}
+    <div className="general-body">
+      <div className="home-page-left-screen">
+        {/* right screen: images, more discretion  */}
+        <div className="home-page-title">
+          {HOME_PAGE_TITLE}
+          <span>
+            {HOME_PAGE_TITLE_SUB}
+          </span>
+        </div>
       </div>
-      <div className="home-page-title-sub">
-        {HOME_PAGE_TITLE_SUB}
+      {/* left screen: image, login form  */}
+      <div className="home-page-right-screen home-page-left-screen">
+        <GenericButton
+          title={LOGIN}
+          onClick={goToLogin}
+        />
+        <div className="home-page-register">
+          {NO_ACCOUNT}
+          <a href="http://localhost:3000/register" className="home-page-register">{REGISTER}</a>
+        </div>
       </div>
-      <GenericButton 
-        title={LOGIN}
-        onClick={goToLogin}
-      />
-      <a href="http://localhost:3000/register">{TO_REGISTER}</a>
     </div>
   )
 }
