@@ -24,7 +24,6 @@ function App() {
         <Route path={"*"} Component={NotFoundPage} />
       </Routes>
     </BrowserRouter>
-
   );
 }
 

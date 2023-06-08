@@ -1,13 +1,14 @@
 import { FC } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { GenericButton } from "../genericComponents/index"
+import { GenericButton, GenericInput } from "../genericComponents/index"
 
 import "../style/generalStyle.scss"
 import "../style/homPageStyle.scss"
 
 
 import { HOME_PAGE_TITLE, HOME_PAGE_TITLE_SUB, LOGIN, REGISTER, NO_ACCOUNT } from "../constes/index";
+import { BasicBackground } from "../components"
 
 export const HomePage: FC = () => {
 
@@ -17,26 +18,34 @@ export const HomePage: FC = () => {
 
   return (
     <div className="general-body">
-      <div className="home-page-left-screen">
-        {/* right screen: images, more discretion  */}
-        <div className="home-page-title">
-          {HOME_PAGE_TITLE}
-          <span>
-            {HOME_PAGE_TITLE_SUB}
-          </span>
-        </div>
-      </div>
-      {/* left screen: image, login form  */}
-      <div className="home-page-right-screen home-page-left-screen">
-        <GenericButton
-          title={LOGIN}
-          onClick={goToLogin}
-        />
+      <BasicBackground>
+        <div className="home-left-screen">
+          <div className="home-page-title">
+            {HOME_PAGE_TITLE}
+            <span>
+              {HOME_PAGE_TITLE_SUB}
+            </span>
+          </div>
+          <div className="login-container">
+            <GenericInput
+              label="user name"
+              // style={{ marginBottom: "1.5vh" }}
+            />
+            <GenericInput
+              label="email"
+              // style={{ marginBottom: "1.5vh" }}
+            />
+            <GenericButton
+              title={LOGIN}
+              onClick={goToLogin}
+            />
+          </div>
+        </div >
         <div className="home-page-register">
           {NO_ACCOUNT}
           <a href="http://localhost:3000/register" className="home-page-register">{REGISTER}</a>
         </div>
-      </div>
+      </BasicBackground>
     </div>
   )
 }

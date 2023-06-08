@@ -1,2 +1,3 @@
 export * from './inputProps'
-export * from './buttonProp'
+export * from './buttonProps'
+export * from './backgroundProps'

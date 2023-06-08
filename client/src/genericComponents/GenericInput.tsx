@@ -8,10 +8,10 @@ export const GenericInput: FC<genericInputProp> = ({ label, style }) => {
         <TextField
             label={label}
             sx={{
-                style,
+                ...style,
                 color: "aliceblue",
                 "& .MuiInputBase-input": {
-                    backgroundColor: "lightgray",
+                    backgroundColor: "transparent",
                 },
             }}
         />

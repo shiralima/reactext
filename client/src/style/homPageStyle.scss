@@ -1,31 +1,38 @@
 @import "./variables.scss";
 
-.home-page-title {
-    margin-top: 1vh;
-    font-weight: $header-font-weight;
-    font-size: $header-font-size ;
-
-    span {
-        font-size: 2.4vw;
-        font-weight: 700;
-    }
+.home-left-screen {
+    @include flex-centered;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 16vh;
+    margin-left: 46vw;
 }
+
+// .home-page-title {
+//     margin-top: 1vh;
+//     font-weight: $header-font-weight;
+//     font-size: $header-font-size ;
+//     position: fixed;
+//     margin-left: 46vw;
+//     margin-top: 20vh;
+
+//     span {
+//         font-size: 2.4vw;
+//         font-weight: 700;
+//     }
+// }
 
 .home-page-register {
+    position: fixed;
 
-    a{
-
-    }
+    a {}
 }
 
-.home-page-left-screen{
-    width: 35vw;
-    height: 80vh;
-    margin-top: 4vh;
-    margin-right: 40vw
-}
-
-.home-page-right-screen{
-    margin-left: 35vw;
-    margin-right: 0 !important;
+.login-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: stretch;   
+    height: 20vh;
+    width: 20vw;
 }
