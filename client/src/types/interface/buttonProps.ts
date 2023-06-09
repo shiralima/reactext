@@ -6,4 +6,5 @@ export interface genericButtonProp {
     style?: CSSProperties // TODO - check if need to be className
     iconUrl?: string
     iconClassName?: string
+    isDisabled? :boolean
 }

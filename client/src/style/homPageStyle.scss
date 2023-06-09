@@ -4,23 +4,18 @@
     @include flex-centered;
     flex-direction: column;
     position: fixed;
-    margin-top: 16vh;
-    margin-left: 46vw;
+    margin-top: 20vh;
+    margin-left: 40vw;
 }
 
-// .home-page-title {
-//     margin-top: 1vh;
-//     font-weight: $header-font-weight;
-//     font-size: $header-font-size ;
-//     position: fixed;
-//     margin-left: 46vw;
-//     margin-top: 20vh;
-
-//     span {
-//         font-size: 2.4vw;
-//         font-weight: 700;
-//     }
-// }
+.home-page-title {
+    font-weight: $header-font-weight;
+    font-size: $header-font-size ;
+    span {
+        font-size: 2.8vw;
+        font-weight: 700;
+    }
+}
 
 .home-page-register {
     position: fixed;
@@ -28,11 +23,11 @@
     a {}
 }
 
-.login-container {
+.login-form-container {
     flex-direction: column;
     justify-content: space-evenly;
     display: flex;
     align-items: stretch;   
-    height: 20vh;
-    width: 20vw;
+    height: 32vh;
+    width: 23vw;
 }
