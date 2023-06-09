@@ -5,7 +5,7 @@ import { genericButtonProp } from "../types/interface/index";
 
 import colors  from '../style/variables.scss'
 
-export const GenericButton: FC<genericButtonProp> = ({ title, style, onClick, iconUrl, iconClassName, isDisabled }) => {
+export const GenericButton: FC<genericButtonProp> = ({ title, style, onClick, iconUrl, iconClassName, disabled }) => {
     return (
         <Button
             variant="contained"
@@ -18,7 +18,7 @@ export const GenericButton: FC<genericButtonProp> = ({ title, style, onClick, ic
                 },
             }}
             onClick={onClick}
-            disable={isDisabled}
+            disabled={disabled}
         >
             {title}
             {iconUrl ? <img src={iconUrl} className={iconClassName} /> : null}
