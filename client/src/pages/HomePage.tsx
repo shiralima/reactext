@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { GenericButton, GenericInput } from "../genericComponents/index"
@@ -18,37 +18,47 @@ export const HomePage: FC = () => {
     navigate("/profile")
   }
 
+  useEffect(() => {
+    const bodyElement = document.body;
+
+  }, []);
+
+  
   return (
-    <div className="general-body">
-      <BasicBackground>
-        <div className="home-left-screen">
+    <BasicBackground imgName="home-page-background.jpg">
+      <div className="home-body">
+        <div className="home-right-screen">
           <div className="home-page-title">
             {HOME_PAGE_TITLE}
-            <span>
+            <div>
               {HOME_PAGE_TITLE_SUB}
-            </span>
+            </div>
           </div>
           <form noValidate autoCapitalize="sentences" autoComplete="on" className="login-form-container">
             <GenericInput
               label="user name"
-              isRequired
+              required
             />
             <GenericInput
               label="email"
-              isRequired
+              required
             />
             <GenericButton
               title={LOGIN}
               onClick={onClickLogin}
-              style={{height: "7vh"}}
+              style={{ height: "7vh" }}
             />
           </form>
         </div>
-        <div className="home-page-register">
-          {NO_ACCOUNT}
-          <a href="http://localhost:3000/register" className="home-page-register">{REGISTER}</a>
+        <div className="home-left-screen">
+          <img src="/image/live-chat-logo.png" className="home-live-chat-logo" />
+          <img src="/image/users-logo.png" className="home-users-logo" />
+          <div className="home-page-register">
+            {NO_ACCOUNT}
+            <a href="http://localhost:3000/register" className="home-page-register">{REGISTER}</a>
+          </div>
         </div>
-      </BasicBackground>
-    </div>
+      </div >
+    </BasicBackground>
   )
 }

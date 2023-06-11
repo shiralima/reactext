@@ -1,20 +1,61 @@
 @import "./variables.scss";
 
-.home-left-screen {
+.home-right-screen {
     @include flex-centered;
     flex-direction: column;
     position: fixed;
-    margin-top: 20vh;
-    margin-left: 40vw;
+    margin-left: 55vw;
+    height: 75vh;
+}
+
+.home-left-screen {
+    margin: 7vh 8vw 15vh;
+    position: fixed;
+    height: 75vh;
+    width: 35vw;
+    // border: 1vh rgb(123, 215, 249) solid;
+    // background-color: aliceblue;
+    // box-shadow: 2px 2px 2px 1px rgb(208, 243, 255);
+    // border: 1vh solid rgb(198, 232, 241 , 10);
+    // background-color: rgba(216, 225, 232, 0.7); /* Change the background color and set opacity */
+    backdrop-filter: blur(5px);
+    /* Apply a slight blur effect */
+    // box-shadow: 2px 2px  1px rgb(215, 222, 224);
+    box-shadow: 0 0 10px 1px rgb(215, 222, 224); 
+    border-radius: 2vh;
+    transform: perspective(1000px) rotateY(2deg) rotateX(7deg) translateZ(26px);
+
+}
+
+.home-users-logo {
+    height: 35vh;
+    width: 20vw;
+}
+
+.home-live-chat-logo {
+    height: 20vh;
+    width: 15vw;
 }
 
 .home-page-title {
     font-weight: $header-font-weight;
     font-size: $header-font-size ;
-    span {
+    margin-bottom: 1vh;
+
+    div {
         font-size: 2.8vw;
         font-weight: 700;
+        display: flex;
+        justify-content: center;
     }
+}
+
+.home-body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .home-page-register {
@@ -27,7 +68,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     display: flex;
-    align-items: stretch;   
-    height: 32vh;
+    align-items: stretch;
+    height: 50vh;
     width: 23vw;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }

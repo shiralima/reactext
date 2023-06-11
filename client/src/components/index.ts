@@ -1,1 +1,1 @@
-export * from './HomeBasicBackground'
+export * from './BasicBackground'
