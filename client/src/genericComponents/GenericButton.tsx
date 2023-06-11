@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 
 import { genericButtonProp } from "../types/interface/index";
 
-import colors  from '../style/variables.scss'
+import colors from '../style/variables.scss'
 
 /**
  * GenericButton
@@ -24,7 +24,7 @@ export const GenericButton: FC<genericButtonProp> = ({ title, style, onClick, ic
             variant="contained"
             sx={{
                 ...style,
-                backgroundColor: colors.genericBtnColor,
+                backgroundColor:  colors.t ,
                 '&:hover': {
                     backgroundColor: colors.genericBtnHoverColor,
                 },

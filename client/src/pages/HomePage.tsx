@@ -18,12 +18,8 @@ export const HomePage: FC = () => {
     navigate("/profile")
   }
 
-  useEffect(() => {
-    const bodyElement = document.body;
+  const onPressRegister = () => navigate("/register")
 
-  }, []);
-
-  
   return (
     <BasicBackground imgName="home-page-background.jpg">
       <div className="home-body">
@@ -51,11 +47,14 @@ export const HomePage: FC = () => {
           </form>
         </div>
         <div className="home-left-screen">
-          <img src="/image/live-chat-logo.png" className="home-live-chat-logo" />
           <img src="/image/users-logo.png" className="home-users-logo" />
-          <div className="home-page-register">
+          <div className="home-register-link">
             {NO_ACCOUNT}
-            <a href="http://localhost:3000/register" className="home-page-register">{REGISTER}</a>
+            <GenericButton
+              title={REGISTER}
+              onClick={onPressRegister}
+              style={{marginTop: "1.2vh"}}
+            />
           </div>
         </div>
       </div >
