@@ -12,6 +12,9 @@ export class User {
     @Column({ unique: true })
     email: string;
 
+    @Column()
+    password: string;
+
     @OneToMany(() => Conversation, conversation => conversation.participant1)
     conversations1: Conversation[];
 

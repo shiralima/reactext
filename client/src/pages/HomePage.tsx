@@ -1,15 +1,18 @@
-import { FC, useEffect } from "react"
+import { FC, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { GenericButton, GenericInput } from "../genericComponents/index"
 import { BasicBackground } from "../components/index"
 
 import { HOME_PAGE_TITLE, HOME_PAGE_TITLE_SUB, LOGIN, REGISTER, NO_ACCOUNT } from "../constes/index";
+import { LoginDetailsType, ObjType } from "../types/type/index";
 
 import "../style/generalStyle.scss"
 import "../style/homPageStyle.scss"
 
 export const HomePage: FC = () => {
+
+  const [loginDetails, setLoginDetails] = useState<LoginDetailsType>({ email: "", password: "" })
 
   const navigate = useNavigate();
 
@@ -19,6 +22,11 @@ export const HomePage: FC = () => {
   }
 
   const onPressRegister = () => navigate("/register")
+
+  const onChangeInput = ({ key, value }: ObjType<LoginDetailsType>) => setLoginDetails(prev => ({
+    ...prev,
+    [key]: value
+  }))
 
   return (
     <BasicBackground imgName="home-page-background.jpg">
@@ -32,12 +40,14 @@ export const HomePage: FC = () => {
           </div>
           <form noValidate autoCapitalize="sentences" autoComplete="on" className="login-form-container">
             <GenericInput
-              label="user name"
-              required
-            />
-            <GenericInput
               label="email"
               required
+              onChange={(event) => onChangeInput({ key: "email", value: event.target.value })}
+            />
+            <GenericInput
+              label="password"
+              required
+              onChange={(event) => onChangeInput({ key: "password", value: event.target.value })}
             />
             <GenericButton
               title={LOGIN}
@@ -53,7 +63,7 @@ export const HomePage: FC = () => {
             <GenericButton
               title={REGISTER}
               onClick={onPressRegister}
-              style={{marginTop: "1.2vh"}}
+              style={{ marginTop: "1.2vh" }}
             />
           </div>
         </div>

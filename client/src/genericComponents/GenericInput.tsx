@@ -14,7 +14,7 @@ import { genericInputProp } from "../types/interface/index";
 * @returns generic button
  */
 
-export const GenericInput: FC<genericInputProp> = ({ label, style, rowNumber, required }) => {
+export const GenericInput: FC<genericInputProp> = ({ label, style, rowNumber, required , onChange}) => {
 
   return (
     <TextField
@@ -23,6 +23,7 @@ export const GenericInput: FC<genericInputProp> = ({ label, style, rowNumber, re
       multiline
       rows={rowNumber}
       required={required}
+      onChange={onChange}      
       sx={{
         ...style,
         "& .MuiInputBase-input": {
