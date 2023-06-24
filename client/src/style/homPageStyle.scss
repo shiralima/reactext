@@ -1,31 +1,66 @@
 @import "./variables.scss";
 
+.home-right-screen {
+    @include flex-centered;
+    flex-direction: column;
+    position: fixed;
+    margin-left: 55vw;
+    height: 75vh;
+}
+
+.home-left-screen {
+    @include flex-centered;
+    flex-direction: column;
+    margin: 7vh 8vw 15vh;
+    position: fixed;
+    height: 75vh;
+    width: 35vw;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px 1px rgb(215, 222, 224);
+    border-radius: 2vh;
+    transform: perspective(1000px) rotateY(2deg) rotateX(7deg) translateZ(26px);
+
+    >* {
+        margin-bottom: 5vh;
+    }
+
+    img {
+        height: 43vh;
+        width: 20vw;
+    }
+}
+
 .home-page-title {
-    margin-top: 1vh;
     font-weight: $header-font-weight;
     font-size: $header-font-size ;
+    margin-bottom: 1vh;
 
-    span {
-        font-size: 2.4vw;
+    div {
+        font-size: 2.8vw;
         font-weight: 700;
+        display: flex;
+        justify-content: center;
     }
 }
 
-.home-page-register {
-
-    a{
-
-    }
+.home-body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.home-page-left-screen{
-    width: 35vw;
-    height: 80vh;
-    margin-top: 4vh;
-    margin-right: 40vw
+.home-register-link {
+    @include flex-centered;
+    flex-direction: column;
 }
 
-.home-page-right-screen{
-    margin-left: 35vw;
-    margin-right: 0 !important;
+.login-form-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: stretch;
+    height: 50vh;
+    width: 23vw;
 }
