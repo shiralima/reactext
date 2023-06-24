@@ -1,16 +1,19 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Message , Conversation} from './index';
+import { Message, Conversation } from './index';
 
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ nullable: false })
     username: string;
 
-    @Column({ unique: true })
+    @Column({ unique: true, nullable: false })
     email: string;
+
+    @Column({ nullable: false })
+    password: string;
 
     @OneToMany(() => Conversation, conversation => conversation.participant1)
     conversations1: Conversation[];
