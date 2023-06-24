@@ -2,15 +2,15 @@
 
 $white: #FFFFFF;
 $black: 000000;
-$generic-btn-color: #2fadcc;
+$generic-btn-color: #f0a336;
 $generic-btn-hover-color: #448ea0;
 $general-font-family: 'Source Sans Pro', sans-serif;
 $general-font-weight: 400;
-$header-font-weight: 600;   
+$header-font-weight: 600;
 $general-font-size: 1.8vw;
 $sub-header-font-size: 2vw;
 $header-font-size: 2.7vw;
-$t: #f0a336;
+$main-color: #378381;
 
 @mixin flex-centered {
     display: flex;
@@ -21,5 +21,5 @@ $t: #f0a336;
 :export {
     genericBtnColor: $generic-btn-color;
     genericBtnHoverColor: $generic-btn-hover-color;
-    t:$t
+    mainColor: $main-color;
 }

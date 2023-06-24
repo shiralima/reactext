@@ -1,2 +1,2 @@
-export * from "./homePageConsts"
-export * from "./muiTheme"
+export * from "./homePageConsts";
+export * from "./muiTheme";

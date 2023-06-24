@@ -10,11 +10,12 @@ import { genericInputProp } from "../types/interface/index";
  * @optional @param style (optional) style for all the mui TextField
  * @optional @param rowNumber (optional) the lines number of the input
  * @optional @param required (optional) if the input is required
+ * @optional @param onChange (optional) function that get the Obj to set when change 
  * 
 * @returns generic button
  */
 
-export const GenericInput: FC<genericInputProp> = ({ label, style, rowNumber, required , onChange}) => {
+export const GenericInput: FC<genericInputProp> = ({ label, style, rowNumber, required, onChange }) => {
 
   return (
     <TextField
@@ -23,7 +24,7 @@ export const GenericInput: FC<genericInputProp> = ({ label, style, rowNumber, re
       multiline
       rows={rowNumber}
       required={required}
-      onChange={onChange}      
+      onChange={onChange}
       sx={{
         ...style,
         "& .MuiInputBase-input": {

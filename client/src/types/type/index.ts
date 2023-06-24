@@ -1,2 +1,2 @@
-export * from './DetailsType'
-export * from './ObjTypes'
+export * from './DetailsType';
+export * from './ObjTypes';

@@ -1,5 +1,4 @@
 import { CSSProperties } from "react"
-import { ObjType } from "../type"
 
 export interface genericInputProp {
     onChange?: (a: any) => void

@@ -1,10 +1,10 @@
 import { CSSProperties } from "react";
 
 export interface genericButtonProp {
-    onClick:/*  () => void */ any
+    onClick: () => void
     title?: string
-    style?: CSSProperties // TODO - check if need to be className
+    style?: CSSProperties
     iconUrl?: string
     iconClassName?: string
-    disabled? :boolean
+    disabled?: boolean
 }
