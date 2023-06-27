@@ -4,7 +4,7 @@ export interface genericButtonProp {
     onClick: () => void
     title?: string
     style?: CSSProperties
-    iconUrl?: string
+    iconName?: string
     iconClassName?: string
     disabled?: boolean
 }

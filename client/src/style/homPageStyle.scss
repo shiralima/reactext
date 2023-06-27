@@ -54,6 +54,10 @@
 .home-register-link {
     @include flex-centered;
     flex-direction: column;
+
+    span {
+        font-size: $general-font-size;
+    }
 }
 
 .login-form-container {

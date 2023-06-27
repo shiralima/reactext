@@ -4,7 +4,7 @@ import { ThemeProvider } from "@emotion/react";
 
 import { ConversationPage, HomePage, MessengerPage, NotFoundPage, ProfilePage, RegisterPage, LoginPage } from "./pages/index";
 
-import { MY_THEME } from "./constes/index";
+import { MY_THEME } from "./constes/styles/index";
 
 function App() {
 

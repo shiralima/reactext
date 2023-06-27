@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { GenericButton, GenericInput } from "../genericComponents/index"
 import { BasicBackground } from "../components/index"
 
-import { REGISTER } from "../constes/index";
+import { BACK_TO_LOGIN, REGISTER } from "../constes/titles/index";
 import { ObjType, RegisterDetailsType } from "../types/type/index";
 
 import "../style/generalStyle.scss"
@@ -59,7 +59,11 @@ export const RegisterPage: FC = () => {
           <GenericButton
             title={REGISTER}
             onClick={onClickRegister}
-            style={{ marginTop: "1.2vh" }}
+          />
+          <GenericButton
+            title={BACK_TO_LOGIN}
+            onClick={onClickLogin}
+            iconName="login-icon.png"
           />
         </form>
       </div>

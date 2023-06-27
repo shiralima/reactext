@@ -1,11 +1,12 @@
-import { FC, useEffect, useState } from "react"
+import { FC, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { GenericButton, GenericInput } from "../genericComponents/index"
 import { BasicBackground } from "../components/index"
 
-import { HOME_PAGE_TITLE, HOME_PAGE_TITLE_SUB, LOGIN, REGISTER, NO_ACCOUNT } from "../constes/index";
 import { LoginDetailsType, ObjType } from "../types/type/index";
+import { HOME_PAGE_TITLE, HOME_PAGE_TITLE_SUB, LOGIN, REGISTER, NO_ACCOUNT } from "../constes/titles/index";
+import { homeRegisterBtn } from "../constes/styles";
 
 import "../style/generalStyle.scss"
 import "../style/homPageStyle.scss"
@@ -52,18 +53,20 @@ export const HomePage: FC = () => {
             <GenericButton
               title={LOGIN}
               onClick={onClickLogin}
-              style={{ height: "7vh" }}
+              iconName="login-icon.png"
             />
           </form>
         </div>
         <div className="home-left-screen">
           <img src="/image/users-logo.png" className="home-users-logo" />
           <div className="home-register-link">
-            {NO_ACCOUNT}
+            <span>
+              {NO_ACCOUNT}
+            </span>
             <GenericButton
               title={REGISTER}
               onClick={onPressRegister}
-              style={{ marginTop: "1.2vh" }}
+              style={homeRegisterBtn}
             />
           </div>
         </div>

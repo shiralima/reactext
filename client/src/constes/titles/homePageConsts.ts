@@ -3,5 +3,7 @@ export const HOME_PAGE_TITLE_SUB: string = " reacText !";
 export const LOGIN: string = "LOGIN";
 export const NO_ACCOUNT: string = "don't have an account?";
 export const REGISTER: string = "register hear";
+export const BACK_TO_LOGIN: string = "back to login";
+
 
 
