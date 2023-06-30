@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/entities';
 import { Repository } from 'typeorm';
@@ -12,20 +12,38 @@ export class UserService {
         private readonly userRepository: Repository<User>,
     ) { }
 
-
-
-
     async registerNewUser(email: string, password: string, username: string) {
         try {
+            //TODO check XXS hear
+            const isEmailExist = await this.userRepository.findOne({ where: { email } })
+            if (isEmailExist) {
+                //TODO return status
+                // return "EMAIL_EXIST"
+            throw new HttpException('ERROR_IN_LOGIN' , HttpStatus.BAD_REQUEST)
+            }
             const saltRounds = 10;
             const salt = await bcrypt.genSalt(saltRounds);
             const hashedPassword = await bcrypt.hash(password, salt);
-            console.log('hashedPassword: ', hashedPassword);
-            const r = await this.userRepository.insert({ email, username, password })
-            console.log('r: ', r);
+            await this.userRepository.insert({ email, username, password: hashedPassword })
         } catch (err) {
-            console.log('err: ', err);
-            return err;
+            throw new HttpException('ERROR_IN_REGISTER' , HttpStatus.BAD_REQUEST)
+        }
+    }
+
+    async login(password: string, email: string) {
+        try {
+            const user = await this.userRepository.findOne({ where: { email } })
+            if (!user) {
+                //* Pay attention to not return specific error to the client 
+                throw new HttpException('INCORRECT_USER_DIALS' , HttpStatus.UNAUTHORIZED)
+            }
+            const isPasswordMatch = await bcrypt.compare(password, user.password)
+            if (!isPasswordMatch) {
+                //* Pay attention to not return specific error to the client 
+                throw new HttpException('INCORRECT_USER_DIALS' , HttpStatus.UNAUTHORIZED)
+            } 
+        } catch (err) {
+            throw new HttpException('ERROR_IN_LOGIN' , HttpStatus.BAD_REQUEST)
         }
     }
 }
