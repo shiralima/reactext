@@ -5,7 +5,7 @@ import axios from "axios"
 export const HomePage: FC = () => {
 
   const sendReqSever = async () => {
-    const res = await axios.post('http://localhost:8080/api/user/login', { email: "shiral@com", password: "shir" })
+    const res = await axios.post('http://localhost:8080/api/user/register', { email: "s", password: "ksk", username: "jj" })
     console.log('res: ', res);
     if (res.data) {
       //open error alert - this email is already used

@@ -22,7 +22,7 @@ export class UserController {
     @Post("/login")
     async login(@Body() { email, password }: NewUserDetails, @Res() res: ResponseType) {
         try {
-            return await this.userService.login(password, email);
+            return await this.userService.login(password, email , res);
         } catch (err) {
             return err;
         }
